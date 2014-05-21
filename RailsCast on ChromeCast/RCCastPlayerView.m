@@ -91,7 +91,7 @@ static void * kRCCastPlayerViewPlayerItemObservingContext = &kRCCastPlayerViewPl
     AVPlayerItemStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
     if(status == AVPlayerItemStatusReadyToPlay){
       dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:kRCCastPlayerViewReadyToPlayNotification object:weakSelf];
+        [[NSNotificationCenter defaultCenter] postNotificationName:RCCastPlayerViewReadyToPlayNotification object:weakSelf];
       });
     }
     [_playerItem removeObserver:self forKeyPath:@"status"];

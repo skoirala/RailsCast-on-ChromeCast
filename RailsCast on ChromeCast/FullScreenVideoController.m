@@ -33,7 +33,7 @@
   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideControl:)];
   [self.view addGestureRecognizer:tap];
   
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:kRCCastPlayerViewReadyToPlayNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:RCCastPlayerViewReadyToPlayNotification object:nil];
   __weak FullScreenVideoController *weakSelf = self;
   __weak RCCastPlayerView *weakPlayer = playerView;
   [playerView setTimeObserver:^(CMTime time){

@@ -17,7 +17,7 @@
 @property (nonatomic, assign) BOOL downloading;
 @property (nonatomic, strong) UIImage *castImage;
 
-
+@property (nonatomic, strong) NSURL *imageUrl;
 
 @property (nonatomic, assign) NSInteger episodeNumber;
 @property (nonatomic, copy) NSString *title;

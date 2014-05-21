@@ -76,8 +76,13 @@
   
   NSTextCheckingResult  *result =  [expression firstMatchInString:self.enclosureUrl options:0 range:NSMakeRange(0, self.enclosureUrl.length)];
   self.episodeNumber = [[self.enclosureUrl substringWithRange:result.range] integerValue];
-  NSLog(@"%d", self.episodeNumber);
 
+}
+
+- (void)setEnclosureUrl:(NSString *)enclosureUrl{
+  _enclosureUrl = enclosureUrl;
+  NSString *urlString =  [NSString stringWithFormat:@"http://railscasts.com/static/episodes/stills/%@", [[[enclosureUrl lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"png"]];
+  self.imageUrl = [NSURL URLWithString:urlString];
 }
 
 - (NSString*)description{

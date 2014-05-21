@@ -10,10 +10,12 @@
 #import "constants.h"
 #import "FullScreenVideoController.h"
 #import "VideoViewController.h"
+#import "ChromeCastmanager.h"
 
 @interface VideoViewController ()
 @property (nonatomic) BOOL scrubbing;
 @property (nonatomic) BOOL playerViewState;
+@property (nonatomic) BOOL playingThroughChromeCast;
 @end
 
 @implementation VideoViewController
@@ -30,13 +32,18 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  if([[ChromeCastmanager sharedManager] currentDevice]){
+    self.chromeCastPlayingView.hidden = NO;
+    
+  }
   self.imageView.image = self.originalImage;
   self.descriptionTextView.text = self.castToPlay.castDescription;
   
   [self.playerView prepareToPlayFromurl:[NSURL URLWithString:self.castToPlay.enclosureUrl]];
   self.playerView.hidden = YES;
   self.playPauseButton.enabled = NO;
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:kRCCastPlayerViewReadyToPlayNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:RCCastPlayerViewReadyToPlayNotification object:nil];
   
   __weak VideoViewController *weakSelf = self;
   [self.playerView setTimeObserver:^(CMTime time){
@@ -67,7 +74,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:kRCCastPlayerViewReadyToPlayNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:RCCastPlayerViewReadyToPlayNotification object:nil];
   
   if([segue.identifier isEqual:@"FullPlayerView"]){
     
@@ -81,11 +88,31 @@
 }
 
 - (void)playPause:(id)sender{
-  [self.playerView playPause];
-  if(self.playerView.playing){
-    [sender setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+  
+  if([[ChromeCastmanager sharedManager] currentDevice]){
+    self.playingThroughChromeCast = !self.playingThroughChromeCast;
+    if(self.playingThroughChromeCast)
+      [[ChromeCastmanager sharedManager] playRCCast:self.castToPlay];
+    else
+      [[ChromeCastmanager sharedManager] pauseCast];
   }else{
-    [sender setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];  }
+    [self playFromDevice];
+  }
+  
+  [self showPlayingStatusWithButtonImage];
+}
+
+- (void)showPlayingStatusWithButtonImage{
+
+    if(self.playerView.playing || ([[ChromeCastmanager sharedManager] currentDevice] && self.playingThroughChromeCast) ){
+      [self.playPauseButton setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+    }else{
+      [self.playPauseButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)playFromDevice{
+  [self.playerView playPause];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,10 +123,14 @@
 
 - (void)scrubberDragged:(UISlider *)scrubber{
   CMTime currentTime = self.playerView.totalDuration;
-    double durationInSeconds = CMTimeGetSeconds(currentTime);
+  double durationInSeconds = CMTimeGetSeconds(currentTime);
   
+  if([[ChromeCastmanager sharedManager] currentDevice]){
+    [[ChromeCastmanager sharedManager] seekToTimeInterval:scrubber.value * durationInSeconds];
+  }else{
     CMTime newTime = CMTimeMakeWithSeconds(scrubber.value * durationInSeconds,currentTime.timescale);
     [self.playerView seekToTime:newTime];
+  }
 }
 
 
@@ -121,7 +152,7 @@
 }
 
 - (void)exitFullScreenVideoMode:(UIStoryboardSegue *)segue{
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:kRCCastPlayerViewReadyToPlayNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rcCastPlayerReadyToPlayNotification:) name:RCCastPlayerViewReadyToPlayNotification object:nil];
 }
 
 @end

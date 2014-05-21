@@ -305,11 +305,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-Ck-5Fc">
+                                <rect key="frame" x="20" y="64" width="279" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cast_on.png" translatesAutoresizingMaskIntoConstraints="NO" id="6n4-7i-eTh">
+                                        <rect key="frame" x="120" y="91" width="29" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.34000000000000002" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FRU-h2-Rq2"/>
                     <connections>
+                        <outlet property="chromeCastPlayingView" destination="FnU-Ck-5Fc" id="F5C-6E-ZW4"/>
                         <outlet property="descriptionTextView" destination="VfO-F7-QQH" id="H9W-DP-BI4"/>
                         <outlet property="imageView" destination="ySA-5R-i0C" id="PNe-2A-ori"/>
                         <outlet property="indicatorView" destination="AKo-zg-ehu" id="oiC-lD-6y8"/>
@@ -437,6 +449,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cast_on.png" width="29" height="22"/>
         <image name="play.png" width="64" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

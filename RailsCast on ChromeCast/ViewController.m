@@ -13,13 +13,18 @@
 #import "RCCast.h"
 #import "VideoViewController.h"
 #import "NVSlideMenuController.h"
+#import <GoogleCast/GoogleCast.h>
 #import "TransitionManager.h"
+#import "ChromeCastmanager.h"
 
-@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate>
+typedef void(^SetImage)(NSIndexPath*, UIImage*);
+
+@interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSIndexPath *clickedIndexPath;
 @property (nonatomic, strong) RCCastManager *manager;
 @property (nonatomic) BOOL filtered;
+@property (nonatomic, weak) UIButton *chromeCastButton;
 
 @end
 
@@ -33,8 +38,71 @@
   _manager = [RCCastManager manager];
   [_manager downloadFeed];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedPullingFeeds:) name:RCCastManagerDidFinishDownloadingAndParsingNotification object:nil];
+  [[ChromeCastmanager sharedManager] performScan];
+  [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(deviceDidComeOnline:) name:ChromeCastDeviceDidComeOnlineNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidGoOffline:) name:ChromeCastDeviceDidGoOfflineNotification object:nil];
+  
+  UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+  [button addTarget:self action:@selector(chromeCastButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+  [button setEnabled:NO];
+  button.frame = CGRectMake(0, 0 , 30, 30);
+  [button setBackgroundImage:[UIImage imageNamed:@"cast_off.png"] forState:UIControlStateNormal];
+  _chromeCastButton = button;
+  UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+  [self.navigationItem setRightBarButtonItem:rightButtonItem];
+}
+
+- (void)chromeCastButtonTapped:(UIButton*)button{
+  
+  GCKDevice *currentDevice = [[ChromeCastmanager sharedManager] currentDevice];
+  NSString *title;
+  if(!currentDevice)
+    title = @"\u2713 Default";
+  else
+    title = @"Default";
   
   
+  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select device" delegate:self cancelButtonTitle:title destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+  NSArray *devices = [[ChromeCastmanager sharedManager] allDevices];
+  
+  for(GCKDevice *aDevice in devices){
+    NSString *additionalTitle;
+    if([[ChromeCastmanager sharedManager] isCurrentDevice:aDevice]){
+      additionalTitle = [NSString stringWithFormat:@"\u2713 %@", [aDevice friendlyName]];
+
+    }else{
+      additionalTitle = [aDevice friendlyName];
+    }
+    [actionSheet addButtonWithTitle:additionalTitle];
+  }
+  
+  
+  [actionSheet showInView:self.view];
+}
+
+- (void)deviceDidComeOnline:(NSNotification*)note{
+  UIImage *image;
+  if([[[ChromeCastmanager sharedManager] allDevices] count] > 0){
+    image = [UIImage imageNamed:@"cast_on.png"];
+    [_chromeCastButton setEnabled:YES];
+  }else{
+    image = [UIImage imageNamed:@"cast_off.png"];
+    [_chromeCastButton setEnabled:NO];
+  }
+  [_chromeCastButton setBackgroundImage:image forState:UIControlStateNormal];
+  
+}
+
+- (void)deviceDidGoOffline:(NSNotification*)note{
+  UIImage *image;
+  if([[[ChromeCastmanager sharedManager] allDevices] count] > 0){
+    image = [UIImage imageNamed:@"cast_on.png"];
+    [_chromeCastButton setEnabled:YES];
+  }else{
+    [_chromeCastButton setEnabled:NO];
+    image = [UIImage imageNamed:@"cast_off.png"];
+  }
+  [_chromeCastButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (void)finishedPullingFeeds:(NSNotification*)note{
@@ -72,23 +140,29 @@
     cell.castImageView.image = cast.castImage;
   }else{
     if(!cast.downloading){
-      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        cast.downloading = YES;
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://railscasts.com/static/episodes/stills/%@", [[[cast.enclosureUrl lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"png"]]];
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-          cast.downloading = NO;
-          cast.castImage = image;
-          RCCastCollectionCell *cell = (RCCastCollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-          cell.castImageView.image = image;
-          
-        });
-      });
+      [self downloadImageForRowAtIndexPath:indexPath forCast:cast];
     }
   }
   return cell;
 }
 
+- (void)downloadImageForRowAtIndexPath:(NSIndexPath*)indexPath forCast:(RCCast*)cast{
+  __weak ViewController *weakSelf = self;
+  SetImage setImage = ^(NSIndexPath *indexPath, UIImage *image){
+    dispatch_async(dispatch_get_main_queue(), ^{
+      cast.downloading = NO;
+      cast.castImage = image;
+      RCCastCollectionCell *cell = (RCCastCollectionCell*)[weakSelf.collectionView cellForItemAtIndexPath:indexPath];
+      cell.castImageView.image = image;
+    });
+  };
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    cast.downloading = YES;
+    NSURL *url = cast.imageUrl;
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    setImage(indexPath, image);
+  });
+}
 
 
 - (void)menuTableViewController:(MenuTableViewController *)viewController didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -152,6 +226,18 @@
 
   }
   return manager; 
+}
+
+
+#pragma mark --- 
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+  if(buttonIndex == 0){
+    [[ChromeCastmanager sharedManager] setCurrentDevice:nil];
+  }else{
+    GCKDevice *selectedDevice = [[[ChromeCastmanager sharedManager] allDevices] objectAtIndex:buttonIndex - 1];
+    [[ChromeCastmanager sharedManager] setCurrentDevice:selectedDevice];
+  }
 }
 
 

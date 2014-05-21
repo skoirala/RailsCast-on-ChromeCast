@@ -4,5 +4,12 @@ typedef NS_ENUM(NSInteger, RCCastOperationStatus){
   RCCastOperationStatusFinished
 };
 
-extern NSString *const kRCCastPlayerViewReadyToPlayNotification;
+extern NSString *const ChromeCastDeviceDidComeOnlineNotification;
+
+extern NSString *const ChromeCastDeviceDidGoOfflineNotification;
+
+extern NSString *const ChromeCastDeviceKey;
+
+extern NSString *const RCCastPlayerViewReadyToPlayNotification;
+
 #define RCCastManagerDidFinishDownloadingAndParsingNotification @"RCCastManagerDidFinishDownloadingAndParsingNotification"

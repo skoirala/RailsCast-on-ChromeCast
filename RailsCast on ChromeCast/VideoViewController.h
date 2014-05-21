@@ -21,6 +21,8 @@
 @property (nonatomic, weak) IBOutlet UISlider *scrubber;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
+@property (nonatomic, weak) IBOutlet UIView *chromeCastPlayingView;
+
 
 - (IBAction)scrubberTouchDownAction:(id)sender;
 - (IBAction)scrubberTouchUpInsideAction:(id)sender;
