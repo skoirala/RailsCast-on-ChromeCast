@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C23377919261E44000D4434 /* RCCastCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23377819261E44000D4434 /* RCCastCollectionCell.m */; };
+		2C23377C19264C65000D4434 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23377B19264C65000D4434 /* MenuTableViewController.m */; };
+		2C23377F19265045000D4434 /* RCCastCollectionViewLayoutAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23377E19265045000D4434 /* RCCastCollectionViewLayoutAttribute.m */; };
+		2C23378219265AE7000D4434 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23378119265AE7000D4434 /* VideoViewController.m */; };
+		2C23378519265B56000D4434 /* TransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23378419265B56000D4434 /* TransitionManager.m */; };
+		2C233788192691A5000D4434 /* RCCastPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C233787192691A5000D4434 /* RCCastPlayerView.m */; };
+		2C23378A19269A5D000D4434 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23378919269A5D000D4434 /* constants.m */; };
+		2C23378D1926A00B000D4434 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C23378B1926A00A000D4434 /* play.png */; };
+		2C23378E1926A00B000D4434 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C23378C1926A00B000D4434 /* pause.png */; };
+		2CA4723C1924034C001EFEB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4723B1924034C001EFEB4 /* Foundation.framework */; };
+		2CA4723E1924034C001EFEB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4723D1924034C001EFEB4 /* CoreGraphics.framework */; };
+		2CA472401924034C001EFEB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4723F1924034C001EFEB4 /* UIKit.framework */; };
+		2CA472461924034E001EFEB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA472441924034E001EFEB4 /* InfoPlist.strings */; };
+		2CA472481924034E001EFEB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA472471924034E001EFEB4 /* main.m */; };
+		2CA4724C1924034E001EFEB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4724B1924034E001EFEB4 /* AppDelegate.m */; };
+		2CA4724F1924034F001EFEB4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4724D1924034F001EFEB4 /* Main_iPhone.storyboard */; };
+		2CA472521924034F001EFEB4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA472501924034F001EFEB4 /* Main_iPad.storyboard */; };
+		2CA472551924034F001EFEB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA472541924034F001EFEB4 /* ViewController.m */; };
+		2CA472571924034F001EFEB4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA472561924034F001EFEB4 /* Images.xcassets */; };
+		2CA4725E19240350001EFEB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4725D19240350001EFEB4 /* XCTest.framework */; };
+		2CA4725F19240350001EFEB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4723B1924034C001EFEB4 /* Foundation.framework */; };
+		2CA4726019240350001EFEB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA4723F1924034C001EFEB4 /* UIKit.framework */; };
+		2CA4726819240351001EFEB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4726619240351001EFEB4 /* InfoPlist.strings */; };
+		2CA4726A19240351001EFEB4 /* RailsCast_on_ChromeCastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4726919240351001EFEB4 /* RailsCast_on_ChromeCastTests.m */; };
+		2CA47275192403A7001EFEB4 /* RCCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA47274192403A7001EFEB4 /* RCCast.m */; };
+		2CA47278192403BE001EFEB4 /* RCCastDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA47277192403BE001EFEB4 /* RCCastDownloader.m */; };
+		2CA4727B192403CC001EFEB4 /* RCCastFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4727A192403CC001EFEB4 /* RCCastFeedParser.m */; };
+		2CA4727E192403DA001EFEB4 /* RCCastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4727D192403DA001EFEB4 /* RCCastManager.m */; };
+		2CA47280192422A9001EFEB4 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4727F192422A9001EFEB4 /* 1.jpg */; };
+		2CF84636192CCBBB00067424 /* FullScreenVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF84635192CCBBB00067424 /* FullScreenVideoController.m */; };
+		A5F068CFE873432D95B515F7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9DD9C301B04E9EB70BA862 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CA4726119240350001EFEB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CA472301924034A001EFEB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CA472371924034B001EFEB4;
+			remoteInfo = "RailsCast on ChromeCast";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C2337761926187E000D4434 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		2C23377719261E44000D4434 /* RCCastCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastCollectionCell.h; sourceTree = "<group>"; };
+		2C23377819261E44000D4434 /* RCCastCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastCollectionCell.m; sourceTree = "<group>"; };
+		2C23377A19264C65000D4434 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		2C23377B19264C65000D4434 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		2C23377D19265045000D4434 /* RCCastCollectionViewLayoutAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastCollectionViewLayoutAttribute.h; sourceTree = "<group>"; };
+		2C23377E19265045000D4434 /* RCCastCollectionViewLayoutAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastCollectionViewLayoutAttribute.m; sourceTree = "<group>"; };
+		2C23378019265AE7000D4434 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		2C23378119265AE7000D4434 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		2C23378319265B56000D4434 /* TransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionManager.h; sourceTree = "<group>"; };
+		2C23378419265B56000D4434 /* TransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionManager.m; sourceTree = "<group>"; };
+		2C233786192691A5000D4434 /* RCCastPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastPlayerView.h; sourceTree = "<group>"; };
+		2C233787192691A5000D4434 /* RCCastPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastPlayerView.m; sourceTree = "<group>"; };
+		2C23378919269A5D000D4434 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
+		2C23378B1926A00A000D4434 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		2C23378C1926A00B000D4434 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		2CA472381924034C001EFEB4 /* RailsCast on ChromeCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RailsCast on ChromeCast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA4723B1924034C001EFEB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CA4723D1924034C001EFEB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2CA4723F1924034C001EFEB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2CA472431924034D001EFEB4 /* RailsCast on ChromeCast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsCast on ChromeCast-Info.plist"; sourceTree = "<group>"; };
+		2CA472451924034E001EFEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CA472471924034E001EFEB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2CA472491924034E001EFEB4 /* RailsCast on ChromeCast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RailsCast on ChromeCast-Prefix.pch"; sourceTree = "<group>"; };
+		2CA4724A1924034E001EFEB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2CA4724B1924034E001EFEB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2CA4724E1924034F001EFEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		2CA472511924034F001EFEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		2CA472531924034F001EFEB4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2CA472541924034F001EFEB4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2CA472561924034F001EFEB4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CA4725C19240350001EFEB4 /* RailsCast on ChromeCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RailsCast on ChromeCastTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA4725D19240350001EFEB4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2CA4726519240351001EFEB4 /* RailsCast on ChromeCastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RailsCast on ChromeCastTests-Info.plist"; sourceTree = "<group>"; };
+		2CA4726719240351001EFEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CA4726919240351001EFEB4 /* RailsCast_on_ChromeCastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailsCast_on_ChromeCastTests.m; sourceTree = "<group>"; };
+		2CA47273192403A7001EFEB4 /* RCCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCast.h; sourceTree = "<group>"; };
+		2CA47274192403A7001EFEB4 /* RCCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCast.m; sourceTree = "<group>"; };
+		2CA47276192403BE001EFEB4 /* RCCastDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastDownloader.h; sourceTree = "<group>"; };
+		2CA47277192403BE001EFEB4 /* RCCastDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastDownloader.m; sourceTree = "<group>"; };
+		2CA47279192403CC001EFEB4 /* RCCastFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastFeedParser.h; sourceTree = "<group>"; };
+		2CA4727A192403CC001EFEB4 /* RCCastFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastFeedParser.m; sourceTree = "<group>"; };
+		2CA4727C192403DA001EFEB4 /* RCCastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCastManager.h; sourceTree = "<group>"; };
+		2CA4727D192403DA001EFEB4 /* RCCastManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCastManager.m; sourceTree = "<group>"; };
+		2CA4727F192422A9001EFEB4 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		2CF84634192CCBBB00067424 /* FullScreenVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenVideoController.h; sourceTree = "<group>"; };
+		2CF84635192CCBBB00067424 /* FullScreenVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenVideoController.m; sourceTree = "<group>"; };
+		977B3122FE6D4507BC0640F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AF9DD9C301B04E9EB70BA862 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CA472351924034B001EFEB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA4723E1924034C001EFEB4 /* CoreGraphics.framework in Frameworks */,
+				2CA472401924034C001EFEB4 /* UIKit.framework in Frameworks */,
+				2CA4723C1924034C001EFEB4 /* Foundation.framework in Frameworks */,
+				A5F068CFE873432D95B515F7 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA4725919240350001EFEB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA4725E19240350001EFEB4 /* XCTest.framework in Frameworks */,
+				2CA4726019240350001EFEB4 /* UIKit.framework in Frameworks */,
+				2CA4725F19240350001EFEB4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CA4722F1924034A001EFEB4 = {
+			isa = PBXGroup;
+			children = (
+				2CA472411924034C001EFEB4 /* RailsCast on ChromeCast */,
+				2CA4726319240350001EFEB4 /* RailsCast on ChromeCastTests */,
+				2CA4723A1924034C001EFEB4 /* Frameworks */,
+				2CA472391924034C001EFEB4 /* Products */,
+				977B3122FE6D4507BC0640F1 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		2CA472391924034C001EFEB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CA472381924034C001EFEB4 /* RailsCast on ChromeCast.app */,
+				2CA4725C19240350001EFEB4 /* RailsCast on ChromeCastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CA4723A1924034C001EFEB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CA4723B1924034C001EFEB4 /* Foundation.framework */,
+				2CA4723D1924034C001EFEB4 /* CoreGraphics.framework */,
+				2CA4723F1924034C001EFEB4 /* UIKit.framework */,
+				2CA4725D19240350001EFEB4 /* XCTest.framework */,
+				AF9DD9C301B04E9EB70BA862 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CA472411924034C001EFEB4 /* RailsCast on ChromeCast */ = {
+			isa = PBXGroup;
+			children = (
+				2C23378B1926A00A000D4434 /* play.png */,
+				2C23378C1926A00B000D4434 /* pause.png */,
+				2CA4727F192422A9001EFEB4 /* 1.jpg */,
+				2CA4724A1924034E001EFEB4 /* AppDelegate.h */,
+				2CA4724B1924034E001EFEB4 /* AppDelegate.m */,
+				2CA4724D1924034F001EFEB4 /* Main_iPhone.storyboard */,
+				2CA472501924034F001EFEB4 /* Main_iPad.storyboard */,
+				2CA472531924034F001EFEB4 /* ViewController.h */,
+				2CA472541924034F001EFEB4 /* ViewController.m */,
+				2CA472561924034F001EFEB4 /* Images.xcassets */,
+				2CA472421924034D001EFEB4 /* Supporting Files */,
+				2CA47273192403A7001EFEB4 /* RCCast.h */,
+				2CA47274192403A7001EFEB4 /* RCCast.m */,
+				2CA47276192403BE001EFEB4 /* RCCastDownloader.h */,
+				2CA47277192403BE001EFEB4 /* RCCastDownloader.m */,
+				2CA47279192403CC001EFEB4 /* RCCastFeedParser.h */,
+				2CA4727A192403CC001EFEB4 /* RCCastFeedParser.m */,
+				2CA4727C192403DA001EFEB4 /* RCCastManager.h */,
+				2CA4727D192403DA001EFEB4 /* RCCastManager.m */,
+				2C2337761926187E000D4434 /* constants.h */,
+				2C23377719261E44000D4434 /* RCCastCollectionCell.h */,
+				2C23377819261E44000D4434 /* RCCastCollectionCell.m */,
+				2C23377A19264C65000D4434 /* MenuTableViewController.h */,
+				2C23377B19264C65000D4434 /* MenuTableViewController.m */,
+				2C23377D19265045000D4434 /* RCCastCollectionViewLayoutAttribute.h */,
+				2C23377E19265045000D4434 /* RCCastCollectionViewLayoutAttribute.m */,
+				2C23378019265AE7000D4434 /* VideoViewController.h */,
+				2C23378119265AE7000D4434 /* VideoViewController.m */,
+				2C23378319265B56000D4434 /* TransitionManager.h */,
+				2C23378419265B56000D4434 /* TransitionManager.m */,
+				2C233786192691A5000D4434 /* RCCastPlayerView.h */,
+				2C233787192691A5000D4434 /* RCCastPlayerView.m */,
+				2C23378919269A5D000D4434 /* constants.m */,
+				2CF84634192CCBBB00067424 /* FullScreenVideoController.h */,
+				2CF84635192CCBBB00067424 /* FullScreenVideoController.m */,
+			);
+			path = "RailsCast on ChromeCast";
+			sourceTree = "<group>";
+		};
+		2CA472421924034D001EFEB4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CA472431924034D001EFEB4 /* RailsCast on ChromeCast-Info.plist */,
+				2CA472441924034E001EFEB4 /* InfoPlist.strings */,
+				2CA472471924034E001EFEB4 /* main.m */,
+				2CA472491924034E001EFEB4 /* RailsCast on ChromeCast-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CA4726319240350001EFEB4 /* RailsCast on ChromeCastTests */ = {
+			isa = PBXGroup;
+			children = (
+				2CA4726919240351001EFEB4 /* RailsCast_on_ChromeCastTests.m */,
+				2CA4726419240351001EFEB4 /* Supporting Files */,
+			);
+			path = "RailsCast on ChromeCastTests";
+			sourceTree = "<group>";
+		};
+		2CA4726419240351001EFEB4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CA4726519240351001EFEB4 /* RailsCast on ChromeCastTests-Info.plist */,
+				2CA4726619240351001EFEB4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CA472371924034B001EFEB4 /* RailsCast on ChromeCast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CA4726D19240351001EFEB4 /* Build configuration list for PBXNativeTarget "RailsCast on ChromeCast" */;
+			buildPhases = (
+				D1271E8EA4DD4206AD6EF933 /* Check Pods Manifest.lock */,
+				2CA472341924034B001EFEB4 /* Sources */,
+				2CA472351924034B001EFEB4 /* Frameworks */,
+				2CA472361924034B001EFEB4 /* Resources */,
+				55B83779A47F4B5FB563CACC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RailsCast on ChromeCast";
+			productName = "RailsCast on ChromeCast";
+			productReference = 2CA472381924034C001EFEB4 /* RailsCast on ChromeCast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CA4725B19240350001EFEB4 /* RailsCast on ChromeCastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CA4727019240351001EFEB4 /* Build configuration list for PBXNativeTarget "RailsCast on ChromeCastTests" */;
+			buildPhases = (
+				2CA4725819240350001EFEB4 /* Sources */,
+				2CA4725919240350001EFEB4 /* Frameworks */,
+				2CA4725A19240350001EFEB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CA4726219240350001EFEB4 /* PBXTargetDependency */,
+			);
+			name = "RailsCast on ChromeCastTests";
+			productName = "RailsCast on ChromeCastTests";
+			productReference = 2CA4725C19240350001EFEB4 /* RailsCast on ChromeCastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CA472301924034A001EFEB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					2CA4725B19240350001EFEB4 = {
+						TestTargetID = 2CA472371924034B001EFEB4;
+					};
+				};
+			};
+			buildConfigurationList = 2CA472331924034B001EFEB4 /* Build configuration list for PBXProject "RailsCast on ChromeCast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CA4722F1924034A001EFEB4;
+			productRefGroup = 2CA472391924034C001EFEB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CA472371924034B001EFEB4 /* RailsCast on ChromeCast */,
+				2CA4725B19240350001EFEB4 /* RailsCast on ChromeCastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CA472361924034B001EFEB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA472521924034F001EFEB4 /* Main_iPad.storyboard in Resources */,
+				2CA472571924034F001EFEB4 /* Images.xcassets in Resources */,
+				2CA4724F1924034F001EFEB4 /* Main_iPhone.storyboard in Resources */,
+				2C23378E1926A00B000D4434 /* pause.png in Resources */,
+				2CA472461924034E001EFEB4 /* InfoPlist.strings in Resources */,
+				2CA47280192422A9001EFEB4 /* 1.jpg in Resources */,
+				2C23378D1926A00B000D4434 /* play.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA4725A19240350001EFEB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA4726819240351001EFEB4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55B83779A47F4B5FB563CACC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1271E8EA4DD4206AD6EF933 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CA472341924034B001EFEB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA4727B192403CC001EFEB4 /* RCCastFeedParser.m in Sources */,
+				2CA47278192403BE001EFEB4 /* RCCastDownloader.m in Sources */,
+				2C23378219265AE7000D4434 /* VideoViewController.m in Sources */,
+				2C23378A19269A5D000D4434 /* constants.m in Sources */,
+				2CA472551924034F001EFEB4 /* ViewController.m in Sources */,
+				2C23378519265B56000D4434 /* TransitionManager.m in Sources */,
+				2C23377F19265045000D4434 /* RCCastCollectionViewLayoutAttribute.m in Sources */,
+				2CA4727E192403DA001EFEB4 /* RCCastManager.m in Sources */,
+				2CA4724C1924034E001EFEB4 /* AppDelegate.m in Sources */,
+				2CF84636192CCBBB00067424 /* FullScreenVideoController.m in Sources */,
+				2C23377919261E44000D4434 /* RCCastCollectionCell.m in Sources */,
+				2C233788192691A5000D4434 /* RCCastPlayerView.m in Sources */,
+				2CA472481924034E001EFEB4 /* main.m in Sources */,
+				2C23377C19264C65000D4434 /* MenuTableViewController.m in Sources */,
+				2CA47275192403A7001EFEB4 /* RCCast.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CA4725819240350001EFEB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA4726A19240351001EFEB4 /* RailsCast_on_ChromeCastTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CA4726219240350001EFEB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CA472371924034B001EFEB4 /* RailsCast on ChromeCast */;
+			targetProxy = 2CA4726119240350001EFEB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2CA472441924034E001EFEB4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA472451924034E001EFEB4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2CA4724D1924034F001EFEB4 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA4724E1924034F001EFEB4 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2CA472501924034F001EFEB4 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA472511924034F001EFEB4 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2CA4726619240351001EFEB4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CA4726719240351001EFEB4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CA4726B19240351001EFEB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CA4726C19240351001EFEB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CA4726E19240351001EFEB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977B3122FE6D4507BC0640F1 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsCast on ChromeCast/RailsCast on ChromeCast-Prefix.pch";
+				INFOPLIST_FILE = "RailsCast on ChromeCast/RailsCast on ChromeCast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2CA4726F19240351001EFEB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977B3122FE6D4507BC0640F1 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsCast on ChromeCast/RailsCast on ChromeCast-Prefix.pch";
+				INFOPLIST_FILE = "RailsCast on ChromeCast/RailsCast on ChromeCast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2CA4727119240351001EFEB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RailsCast on ChromeCast.app/RailsCast on ChromeCast";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsCast on ChromeCast/RailsCast on ChromeCast-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RailsCast on ChromeCastTests/RailsCast on ChromeCastTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2CA4727219240351001EFEB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RailsCast on ChromeCast.app/RailsCast on ChromeCast";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsCast on ChromeCast/RailsCast on ChromeCast-Prefix.pch";
+				INFOPLIST_FILE = "RailsCast on ChromeCastTests/RailsCast on ChromeCastTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CA472331924034B001EFEB4 /* Build configuration list for PBXProject "RailsCast on ChromeCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA4726B19240351001EFEB4 /* Debug */,
+				2CA4726C19240351001EFEB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CA4726D19240351001EFEB4 /* Build configuration list for PBXNativeTarget "RailsCast on ChromeCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA4726E19240351001EFEB4 /* Debug */,
+				2CA4726F19240351001EFEB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CA4727019240351001EFEB4 /* Build configuration list for PBXNativeTarget "RailsCast on ChromeCastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CA4727119240351001EFEB4 /* Debug */,
+				2CA4727219240351001EFEB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CA472301924034A001EFEB4 /* Project object */;
+}
